@@ -37,6 +37,10 @@
 	// I2C интерфейс
 	PIN_CONFIGURATION(PIN_I2C_SDA);
 	PIN_CONFIGURATION(PIN_I2C_SDL);
+
+	// USART интерфейс
+	PIN_CONFIGURATION(PIN_USART_RXD);
+	PIN_CONFIGURATION(PIN_USART_TXD);
 }
 
 @inline void clock_init(void)
@@ -55,13 +59,23 @@
 
 void main(void)
 {
+	uint8_t data;
+
 	disableInterrupts();
 
 	gpio_init();
 
 	clock_init();
 
+	mcu_usart_init(38400);
+
+	enableInterrupts();
+
 	while (1)
 	{
+		if(mcu_usart_fifo_receive(&data))
+		{
+			mcu_usart_fifo_transmit(data);
+		}
 	}
 }

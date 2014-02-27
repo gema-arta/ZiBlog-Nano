@@ -120,10 +120,12 @@ INTERRUPT_HANDLER( SPI1_IRQHandler)
 
 INTERRUPT_HANDLER( USART1_TX_TIM5_UPD_OVF_TRG_BRK_IRQHandler)
 {
+	mcu_usart_fifo_tx_handler();
 }
 
 INTERRUPT_HANDLER( USART1_RX_TIM5_CC_IRQHandler)
 {
+	mcu_usart_fifo_rx_handler();
 }
 
 INTERRUPT_HANDLER( I2C1_SPI2_IRQHandler)
