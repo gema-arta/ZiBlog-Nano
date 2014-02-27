@@ -18,6 +18,9 @@
 #include "mcu_gpio.h"
 #include "mcu_usart.h"
 
+#include "device.h"
+#include "network.h"
+
 #define PIN_IO_D0			A, 6, HIGH, OUTPUT_PUSH_PULL_NOSPEED_LIMIT
 #define PIN_IO_D1			D, 0, HIGH, OUTPUT_PUSH_PULL_NOSPEED_LIMIT
 #define PIN_IO_D2			D, 1, HIGH, OUTPUT_PUSH_PULL_NOSPEED_LIMIT

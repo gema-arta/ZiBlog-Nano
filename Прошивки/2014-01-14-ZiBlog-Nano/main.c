@@ -73,9 +73,6 @@ void main(void)
 
 	while (1)
 	{
-		if(mcu_usart_fifo_receive(&data))
-		{
-			mcu_usart_fifo_transmit(data);
-		}
+		device_process();
 	}
 }

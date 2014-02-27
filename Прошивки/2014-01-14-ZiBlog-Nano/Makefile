@@ -3,6 +3,8 @@
 #----------------------------------------------------------
 
 SRC_C  = main.c
+SRC_C += device.c
+SRC_C += network.c
 SRC_C += mcu_usart.c
 SRC_C += stm8_interrupt_vector.c
 SRC_C += stm8l15x_it.c
