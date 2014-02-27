@@ -16,6 +16,8 @@ enum device_settings
 struct device_type
 {
 	uint8_t address;
+	uint32_t time_life;
+	uint8_t mcu_load;
 };
 
 extern struct device_type device;
