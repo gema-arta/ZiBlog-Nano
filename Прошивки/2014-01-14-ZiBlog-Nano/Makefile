@@ -5,6 +5,7 @@
 SRC_C  = main.c
 SRC_C += stm8_interrupt_vector.c
 SRC_C += stm8l15x_it.c
+SRC_C += stm8l15x_clk.c
 
 CROSS_PATH = D:/Tools/Cosmic/4.3.7/
 CROSS = $(CROSS_PATH)/

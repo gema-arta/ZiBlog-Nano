@@ -39,9 +39,27 @@
 	PIN_CONFIGURATION(PIN_I2C_SDL);
 }
 
+@inline void clock_init(void)
+{
+	// "переключаемся" на внешний кварцевый резонатор
+	CLK_SYSCLKDivConfig(CLK_SYSCLKDiv_1);
+	CLK_SYSCLKSourceSwitchCmd(ENABLE);
+	CLK_SYSCLKSourceConfig(CLK_SYSCLKSource_HSE);
+	while (CLK_GetSYSCLKSource() != CLK_SYSCLKSource_HSE)
+	{
+	}
+
+	// выключаем HSI
+	CLK_HSICmd(DISABLE);
+}
+
 void main(void)
 {
 	disableInterrupts();
+
+	gpio_init();
+
+	clock_init();
 
 	while (1)
 	{
