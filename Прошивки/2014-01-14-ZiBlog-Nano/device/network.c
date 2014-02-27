@@ -27,8 +27,6 @@ enum direction
 	READ = 1, WRITE = 0
 };
 
-uint16_t packet_rx_counter;
-
 void packet_calc_crc(void)
 {
 	uint8_t byte_number;
@@ -149,9 +147,19 @@ void network_uart_process(void)
 					{
 						if (packet.direction == WRITE)
 						{
+							access_points_write(packet.access_point, &packet.raw[3]);
 						}
 						else
 						{
+							packet.recipient_address = packet.sender_address;
+							packet.sender_address = device.address;
+							packet.direction = WRITE;
+							byte_number = packet.data_3;
+
+							access_points_read(packet.access_point, &packet.raw[3]);
+
+							packet.access_point = byte_number;
+							network_uart_send_packet();
 						}
 					}
 				}

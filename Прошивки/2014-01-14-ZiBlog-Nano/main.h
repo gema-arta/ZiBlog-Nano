@@ -20,6 +20,7 @@
 
 #include "device.h"
 #include "network.h"
+#include "access_points.h"
 
 #define PIN_IO_D0			A, 6, HIGH, OUTPUT_PUSH_PULL_NOSPEED_LIMIT
 #define PIN_IO_D1			D, 0, HIGH, OUTPUT_PUSH_PULL_NOSPEED_LIMIT
