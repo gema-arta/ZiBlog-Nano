@@ -2,6 +2,7 @@
  *	Copyright (c) 2010 STMicroelectronics
  */
 
+#include "main.h"
 #include "stm8l15x_it.h"
 
 typedef void @ far(*interrupt_handler_t) (void);

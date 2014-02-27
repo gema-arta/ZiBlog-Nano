@@ -20,6 +20,8 @@
   ******************************************************************************  
   */
 
+#include "main.h"
+
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __STM8L15x_H
  #define __STM8L15x_H
@@ -33,7 +35,7 @@
 /* #define STM8L15X_LD */     /*!< STM8L15X_LD: STM8L15x Low density devices */
 /* #define STM8L15X_MD      /*!< STM8L15X_MD: STM8L15x Medium density devices */
 /* #define STM8L15X_MDP */    /*!< STM8L15X_MDP: STM8L15x Medium density plus devices */
- #define STM8L15X_HD     /*!< STM8L15X_HD: STM8L15x/16x High density devices */
+/* #define STM8L15X_HD  */   /*!< STM8L15X_HD: STM8L15x/16x High density devices */
 
 /*  Tip: To avoid modifying this file each time you need to switch between these
         devices, you can define the device in your toolchain compiler preprocessor.
@@ -86,7 +88,7 @@
    Tip: To avoid modifying this file each time you need to use different HSE, you
         can define the HSE value in your toolchain compiler preprocessor.
   */
-#if !defined  HSE_Value
+#if !defined  HSE_VALUE
  #define HSE_VALUE   ((uint32_t)9216000) /*!< Typical Value of the HSE in Hz */
 #endif /* HSE_Value */
 
