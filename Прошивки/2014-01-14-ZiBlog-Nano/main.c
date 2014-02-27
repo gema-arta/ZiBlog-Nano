@@ -37,13 +37,42 @@
 	// I2C интерфейс
 	PIN_CONFIGURATION(PIN_I2C_SDA);
 	PIN_CONFIGURATION(PIN_I2C_SDL);
+
+	// USART интерфейс
+	PIN_CONFIGURATION(PIN_USART_RXD);
+	PIN_CONFIGURATION(PIN_USART_TXD);
+}
+
+@inline void clock_init(void)
+{
+	// "переключаемся" на внешний кварцевый резонатор
+	CLK_SYSCLKDivConfig(CLK_SYSCLKDiv_1);
+	CLK_SYSCLKSourceSwitchCmd(ENABLE);
+	CLK_SYSCLKSourceConfig(CLK_SYSCLKSource_HSE);
+	while (CLK_GetSYSCLKSource() != CLK_SYSCLKSource_HSE)
+	{
+	}
+
+	// выключаем HSI
+	CLK_HSICmd(DISABLE);
 }
 
 void main(void)
 {
+	uint8_t data;
+
 	disableInterrupts();
+
+	gpio_init();
+
+	clock_init();
+
+	mcu_usart_init(38400);
+
+	enableInterrupts();
 
 	while (1)
 	{
+		device_process();
 	}
 }

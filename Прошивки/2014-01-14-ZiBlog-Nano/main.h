@@ -7,12 +7,19 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
-#include "stm8l15x_conf.h"
-#include "stm8l15x_it.h"
+#define STM8L15X_MD
+#define HSE_VALUE			((uint32_t)12000000) // МГц
+#define assert_param(expr)	((void)0)
+
+#include "stm8l15x.h"
 
 #include "macros.h"
 
 #include "mcu_gpio.h"
+#include "mcu_usart.h"
+
+#include "device.h"
+#include "network.h"
 
 #define PIN_IO_D0			A, 6, HIGH, OUTPUT_PUSH_PULL_NOSPEED_LIMIT
 #define PIN_IO_D1			D, 0, HIGH, OUTPUT_PUSH_PULL_NOSPEED_LIMIT
@@ -40,5 +47,8 @@
 
 #define PIN_I2C_SDL			C, 1, HIGH, OUTPUT_OPEN_DRAIN_NOSPEED_LIMIT
 #define PIN_I2C_SDA			C, 0, HIGH, OUTPUT_OPEN_DRAIN_NOSPEED_LIMIT
+
+#define PIN_USART_RXD		C, 2, HIGH, INPUT_PULL_UP_WITHOUT_ITERRUPT
+#define PIN_USART_TXD		C, 3, HIGH,	OUTPUT_PUSH_PULL_SPEED_LIMIT_10MHZ
 
 #endif /* MAIN_H_ */
