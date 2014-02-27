@@ -2,7 +2,6 @@
  *
  */
 
-#include "stm8l15x_it.h"
 #include "main.h"
 
 #ifdef _COSMIC_
