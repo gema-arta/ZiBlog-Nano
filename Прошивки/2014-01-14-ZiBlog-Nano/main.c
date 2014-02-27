@@ -67,6 +67,8 @@ void main(void)
 
 	clock_init();
 
+	device_init();
+
 	mcu_usart_init(38400);
 
 	enableInterrupts();
