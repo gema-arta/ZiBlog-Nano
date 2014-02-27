@@ -1,0 +1,1 @@
+Гербер фалы подготовлены для заказа печатной платы в IteadStudio (http://iteadstudio.com)
