@@ -1,1 +1,1 @@
-Гербер фалы подготовлены для заказа печатной платы в IteadStudio (http://iteadstudio.com)
+п»їР¤Р°Р№Р»С‹ РїРµС‡Р°С‚РЅРѕР№ РїР»Р°С‚С‹ РІ С„РѕСЂРјР°С‚Рµ Gerber РґР»СЏ Р·Р°Р·Р°РєР° РІ IteadStudio (http://iteadstudio.com)
