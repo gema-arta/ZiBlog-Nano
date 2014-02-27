@@ -8,3 +8,9 @@
 Денис Железняков aka ZiB @ 2014
 http://ziblog.ru
 zib@ziblog.ru
+
+Внимание!
+Весь материал, автор которого — Денис Железняков, предоствляется на условиях
+лицензии Creative Commons «Attribution-NonCommercial-ShareAlike» 4.0
+Краткое изложение которой на русском языке доступно по адресу:
+http://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
