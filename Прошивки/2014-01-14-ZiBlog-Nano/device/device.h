@@ -18,11 +18,11 @@ struct device_type
 	uint8_t address;
 	uint32_t time_life;
 	uint8_t mcu_load;
+	volatile uint8_t mcu_load_counter;
 };
 
 extern struct device_type device;
 
 void device_init(void);
-void device_process(void);
 
 #endif /* DEVICE_H_ */

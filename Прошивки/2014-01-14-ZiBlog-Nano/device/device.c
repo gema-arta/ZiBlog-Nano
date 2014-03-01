@@ -12,9 +12,3 @@ void device_init(void)
 {
 	device.address = 1;
 }
-
-void device_process(void)
-{
-	// обработка пакетов сети USART
-	network_uart_process();
-}

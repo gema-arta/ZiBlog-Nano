@@ -36,6 +36,7 @@ target/mcu_usart.o
 target/stm8l15x_it.o
 target/stm8l15x_clk.o
 target/stm8l15x_usart.o
+target/stm8l15x_tim1.o
 target/stm8l15x_tim4.o
 
 # библиотеки

@@ -104,6 +104,10 @@ INTERRUPT_HANDLER( TIM3_CC_USART3_RX_IRQHandler)
 
 INTERRUPT_HANDLER( TIM1_UPD_OVF_TRG_COM_IRQHandler)
 {
+	if (device.mcu_load_counter != 255)
+		device.mcu_load_counter++;
+
+	TIM1->SR1 = (uint8_t) (~TIM1_SR1_UIF);
 }
 
 INTERRUPT_HANDLER( TIM1_CC_IRQHandler)
