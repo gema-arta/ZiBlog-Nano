@@ -3,6 +3,7 @@
 #----------------------------------------------------------
 
 SRC_C  = main.c
+SRC_C += macros.c
 SRC_C += device.c
 SRC_C += network.c
 SRC_C += access_points.c
@@ -11,6 +12,7 @@ SRC_C += stm8_interrupt_vector.c
 SRC_C += stm8l15x_it.c
 SRC_C += stm8l15x_clk.c
 SRC_C += stm8l15x_usart.c
+SRC_C += stm8l15x_tim4.c
 
 CROSS_PATH = D:/Tools/Cosmic/4.3.7/
 CROSS = $(CROSS_PATH)/

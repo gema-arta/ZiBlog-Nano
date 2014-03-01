@@ -28,6 +28,7 @@ crtsi0.sm8
 
 # исходники
 target/main.o
+target/macros.o
 target/device.o
 target/network.o
 target/access_points.o
@@ -35,6 +36,7 @@ target/mcu_usart.o
 target/stm8l15x_it.o
 target/stm8l15x_clk.o
 target/stm8l15x_usart.o
+target/stm8l15x_tim4.o
 
 # библиотеки
 +def _FLASH_IAPSR=0x5054

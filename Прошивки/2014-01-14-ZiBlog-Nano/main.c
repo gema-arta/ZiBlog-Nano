@@ -57,6 +57,17 @@
 	CLK_HSICmd(DISABLE);
 }
 
+@inline void timers_init(void)
+{
+	CLK->PCKENR1 |= CLK_PCKENR1_TIM4;
+
+	// таймер 4 - формирование 0.5 мс интервалов
+	TIM4_TimeBaseInit(TIM4_Prescaler_32, 250 - 1);
+	TIM4_ClearFlag(TIM4_FLAG_Update);
+	TIM4_ITConfig(TIM4_IT_Update, ENABLE);
+	TIM4_Cmd(ENABLE);
+}
+
 void main(void)
 {
 	uint8_t data;
@@ -69,12 +80,20 @@ void main(void)
 
 	device_init();
 
+	timers_init();
+
 	mcu_usart_init(38400);
 
 	enableInterrupts();
 
 	while (1)
 	{
+		// синхронизация времени - 10 мс
+		if (time_synchronization_10ms())
+		{
+			PIN_TOGGLE(PIN_IO_D2);
+		}
+
 		device_process();
 	}
 }

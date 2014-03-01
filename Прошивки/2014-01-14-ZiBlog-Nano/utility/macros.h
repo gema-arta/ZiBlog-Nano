@@ -13,4 +13,7 @@
 
 #define BYTES(value)    			((uint8_t *) & (value))
 
+void synchronization_10ms_refresh(void);
+_Bool time_synchronization_10ms(void);
+
 #endif /* MACROS_H_ */
