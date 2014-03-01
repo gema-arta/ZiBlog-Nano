@@ -8,7 +8,7 @@
 #define MAIN_H_
 
 #define STM8L15X_MD
-#define HSE_VALUE			((uint32_t)12000000) // МГц
+#define HSE_VALUE			((uint32_t)16000000) // МГц
 #define assert_param(expr)	((void)0)
 
 #include "stm8l15x.h"
