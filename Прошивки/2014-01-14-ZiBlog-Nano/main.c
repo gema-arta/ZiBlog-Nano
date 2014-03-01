@@ -62,7 +62,7 @@
 	CLK->PCKENR1 |= CLK_PCKENR1_TIM4;
 
 	// таймер 4 - формирование 0.5 мс интервалов
-	TIM4_TimeBaseInit(TIM4_Prescaler_32, 250 - 1);
+	TIM4_TimeBaseInit(TIM4_Prescaler_32, 250 - 1); // 16МГц / 32 / 250 = 2 кГц
 	TIM4_ClearFlag(TIM4_FLAG_Update);
 	TIM4_ITConfig(TIM4_IT_Update, ENABLE);
 	TIM4_Cmd(ENABLE);

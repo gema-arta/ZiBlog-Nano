@@ -114,6 +114,8 @@ INTERRUPT_HANDLER( TIM4_UPD_OVF_TRG_IRQHandler)
 {
 	synchronization_10ms_refresh();
 
+	delay_ms_refresh();
+
 	TIM4->SR1 = (uint8_t) (~TIM4_IT_Update);
 }
 

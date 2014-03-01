@@ -7,6 +7,8 @@
 #include "main.h"
 
 static _Bool is_ready;
+static volatile uint16_t delay_count;
+static volatile _Bool delay_flag;
 
 void synchronization_10ms_refresh(void)
 {
@@ -31,4 +33,25 @@ _Bool time_synchronization_10ms(void)
 	}
 
 	return FALSE;
+}
+
+void delay_ms(volatile uint16_t delay)
+{
+	delay_count = delay << 1;
+	delay_flag = TRUE;
+
+	while (delay_flag == TRUE)
+	{
+	}
+}
+
+void delay_ms_refresh(void)
+{
+	if (delay_flag == TRUE)
+	{
+		if (--delay_count == 0U)
+		{
+			delay_flag = FALSE;
+		}
+	}
 }

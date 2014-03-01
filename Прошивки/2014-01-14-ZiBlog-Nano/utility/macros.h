@@ -15,5 +15,7 @@
 
 void synchronization_10ms_refresh(void);
 _Bool time_synchronization_10ms(void);
+void delay_ms_refresh(void);
+void delay_ms(volatile uint16_t delay);
 
 #endif /* MACROS_H_ */
