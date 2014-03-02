@@ -9,7 +9,7 @@
 
 enum device_settings
 {
-	DEVICE_SETTINGS_ID = (uint16_t)0x2501, // идентификатор устройства
+	DEVICE_SETTINGS_ID = (uint16_t)2501, // идентификатор устройства
 	DEVICE_SETTINGS
 };
 
